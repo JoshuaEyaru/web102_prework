@@ -94,30 +94,43 @@ function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have not yet met their goal
-
+    let unFunded = GAMES_JSON.filter((game) => {
+        return game.pledged < game.goal;
+    });
+    console.log("unfunded " + unFunded);
 
     // use the function we previously created to add the unfunded games to the DOM
+    addGamesToPage(unFunded);
 
 }
+filterUnfundedOnly();
+
 
 // show only games that are fully funded
 function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
+    let fundedGames = GAMES_JSON.filter((game) => {
+        return game.pledged >= game.goal;
+    });
+    console.log("funded " + fundedGames);
 
-
-    // use the function we previously created to add unfunded games to the DOM
+    // use the function we previously created to add funded games to the DOM
+    addGamesToPage(fundedGames);
 
 }
+filterFundedOnly();
 
 // show all games
 function showAllGames() {
     deleteChildElements(gamesContainer);
 
     // add all games from the JSON data to the DOM
+    addGamesToPage(GAMES_JSON);
 
 }
+showAllGames();
 
 // select each button in the "Our Games" section
 const unfundedBtn = document.getElementById("unfunded-btn");
@@ -125,6 +138,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("click", showAllGames);
 
 
 /*************************************************************************************
