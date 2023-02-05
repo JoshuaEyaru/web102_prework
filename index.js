@@ -33,11 +33,12 @@ function addGamesToPage(games) {
         // create a new div element, which will become the game card
         // add the class game-card to the list
 
-         
 
-        <div class="game-card"></div>
+
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("game-card");
         const gameDiv = document.getElementsByClassName("game-card");
-        gameDiv.innerHTML = `<h1>Game: ${games.name}</h1>, <p>description: ${games.description}</p> <p> poster: <img class="game-img" src="${games.img}"/></p>`;
+        gameDiv.innerHTML = `<h1>Game: ${games[i].name}</h1>, <p>description: ${games[i].description}</p> <p> poster: <img class="game-img" src="${games[i].img}"/></p>`;
         gamesContainer.appendChild(gameDiv);
     }
     
