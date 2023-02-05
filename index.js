@@ -33,20 +33,16 @@ function addGamesToPage(games) {
         // create a new div element, which will become the game card
         // add the class game-card to the list
 
-
-
         const newDiv = document.createElement("div");
         newDiv.classList.add("game-card");
-        const gameDiv = document.getElementsByClassName("game-card");
-        gameDiv.innerHTML = `<h1>Game: ${games[i].name}</h1>, <p>description: ${games[i].description}</p> <p> poster: <img class="game-img" src="${games[i].img}"/></p>`;
-        gamesContainer.appendChild(gameDiv);
+        newDiv = document.getElementsByClassName("game-card");
+        newDiv.innerHTML = `<h1>Game: ${games[i].name}</h1>, <p>description: ${games[i].description}</p> <p> poster: <img class="game-img" src="${games[i].img}"/></p>`;
+        gamesContainer.appendChild(newDiv);
     }
-    
 
 }
 
 // call the function we just defined using the correct variable
-let games = addGamesToPage;
 addGamesToPage(games);
 // later, we'll call this function using a different list of games
 
