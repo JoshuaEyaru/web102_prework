@@ -43,7 +43,7 @@ function addGamesToPage(games) {
 }
 
 // call the function we just defined using the correct variable
-addGamesToPage(games);
+addGamesToPage(GAMES_JSON);
 // later, we'll call this function using a different list of games
 
 
