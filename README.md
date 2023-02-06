@@ -1,10 +1,10 @@
-# WEB102 Prework - *Name of App Here*
+# WEB102 Prework - Sea Monster Crowdfunding
 
-Submitted by: **Your Name Here**
+Submitted by: Joshua Eyaru
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+Sea Monster Crowdfunding is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: 18 hours spent in total
 
 ## Required Features
 
@@ -22,19 +22,22 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented features:
+![video1909257144](https://user-images.githubusercontent.com/56198053/216885717-f24b6721-cf8c-4295-842c-15baca379dc8.gif)
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+had trouble with all gif screen recording software while deadline was closing in so I recorded actual video via zoom
+actual video: https://drive.google.com/file/d/1nd6p7i26R7Dgl1vjZvtZJILSA0oz0Lot/view?usp=sharing 
+
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with Kap and actual video created with zoom. 
+
+
+
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+I had challenges in starting the assignment due to the first code, I asked questions on slack and never got any feedback which made me leave until last days of submission is when I realized the code was actually in the instructions, total oversite from my end which costed me a lot of time
 
 ## License
 
@@ -51,3 +54,4 @@ Describe any challenges encountered while building the app.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    
