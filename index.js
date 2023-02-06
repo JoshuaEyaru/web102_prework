@@ -97,7 +97,6 @@ function filterUnfundedOnly() {
     let unFunded = GAMES_JSON.filter((game) => {
         return game.pledged < game.goal;
     });
-    console.log("unfunded " + unFunded);
 
     // use the function we previously created to add the unfunded games to the DOM
     addGamesToPage(unFunded);
@@ -114,7 +113,7 @@ function filterFundedOnly() {
     let fundedGames = GAMES_JSON.filter((game) => {
         return game.pledged >= game.goal;
     });
-    console.log("funded " + fundedGames);
+    
 
     // use the function we previously created to add funded games to the DOM
     addGamesToPage(fundedGames);
@@ -153,11 +152,34 @@ const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
 
+let unFundedGames = GAMES_JSON.filter((game) => {
+    return game.pledged < game.goal;
+});
+let numUnFundedGames = unFundedGames.length;
+
+// extra code to help with ternery operator, my own idea
+
+let fundedGames = GAMES_JSON.filter((game) => {
+    return game.pledged >= game.goal;
+});
+let numFundedGames = fundedGames.length;
+
+let totalFundedAmount = GAMES_JSON.reduce((sum, game) => {
+    return sum + game.pledged;
+}, 0);
+
+
 
 // create a string that explains the number of unfunded games using the ternary operator
 
+let result = `We have raised $${totalFundedAmount.toLocaleString('en-US')} for ${numFundedGames} games. However, ${numUnFundedGames > 0 ? 
+    numUnFundedGames + " games remain unfunded." : "All games have been funded."}`;
 
 // create a new DOM element containing the template string and append it to the description container
+const newDescriptionDiv = document.createElement("div");
+newDescriptionDiv.classList.add("description-card");
+newDescriptionDiv.innerHTML = `<p>${result}</p>`;
+descriptionContainer.appendChild(newDescriptionDiv);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
