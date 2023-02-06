@@ -157,22 +157,9 @@ let unFundedGames = GAMES_JSON.filter((game) => {
 });
 let numUnFundedGames = unFundedGames.length;
 
-// extra code to help with ternery operator, my own idea
-
-let fundedGames = GAMES_JSON.filter((game) => {
-    return game.pledged >= game.goal;
-});
-let numFundedGames = fundedGames.length;
-
-let totalFundedAmount = GAMES_JSON.reduce((sum, game) => {
-    return sum + game.pledged;
-}, 0);
-
-
-
 // create a string that explains the number of unfunded games using the ternary operator
 
-let result = `We have raised $${totalFundedAmount.toLocaleString('en-US')} for ${numFundedGames} games. However, ${numUnFundedGames > 0 ? 
+let result = `We have raised a total of $${amountRaised.toLocaleString('en-US')} for ${GAMES_JSON.length} games. However, ${numUnFundedGames > 0 ? 
     numUnFundedGames + " games remain unfunded." : "All games have been funded."}`;
 
 // create a new DOM element containing the template string and append it to the description container
@@ -194,7 +181,16 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [first, second, ...others] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+let newTopDiv = document.createElement("div");
+newTopDiv.classList.add("firstGame-card");
+newTopDiv.innerHTML = `<p>The highest funded game is ${first.name}</p>`;
+firstGameContainer.appendChild(newTopDiv);
 
 // do the same for the runner up item
+let runnerUpDiv = document.createElement("div");
+runnerUpDiv.classList.add("runnerUp-card");
+runnerUpDiv.innerHTML = `<p>The second highest funded game is ${second.name}</p>`;
+secondGameContainer.appendChild(runnerUpDiv);
